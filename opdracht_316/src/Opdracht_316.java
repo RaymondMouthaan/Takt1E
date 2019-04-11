@@ -2,6 +2,7 @@ public class Opdracht_316 {
     public static void main(String[] args) {
 
         // Vul tabel met persoonsgegevens
+        // <geboortedag>-<geboortemaand>-<geboortejaar>;<geslacht>;<achternaam>;<voornaam>
         String[] persoon = {
                 "24-08-1954;V; Dijk, van;Maria",
                 "02-03-1958;M; Groot, de;Jacob",
@@ -31,7 +32,7 @@ public class Opdracht_316 {
         while (loopTeller < maximumAantal) {
 
             // Split regel, bepaal jaar en geslacht
-            int geboorteJaar = Integer.parseInt(leesVeld(persoon[loopTeller], 2));
+            int geboorteJaar = Integer.parseInt(leesVeld(persoon, loopTeller, 2));
 
             // Schrijf geboortejaar
             System.out.println("Het geboortejaar is: " + geboorteJaar);
@@ -48,7 +49,7 @@ public class Opdracht_316 {
             while (loopTeller < maximumAantal && geboorteJaar == hulpJaar) {
 
                 // Geslacht man, vrouw of onbekend?
-                switch (leesVeld(persoon[loopTeller], 3)) {
+                switch (leesVeld(persoon, loopTeller, 3)) {
                     case "M":
                     case "m": {
                         // Tel mannen dit jaar
@@ -77,7 +78,7 @@ public class Opdracht_316 {
                 // C1 = loopTeller < maximumAantal
                 if (loopTeller < maximumAantal) {
                     // Split regel, bepaal jaar en geslacht
-                    geboorteJaar = Integer.parseInt(leesVeld(persoon[loopTeller], 2));
+                    geboorteJaar = Integer.parseInt(leesVeld(persoon, loopTeller, 2));
                 }
             }
             // Schrijf tellingen dit jaar
@@ -93,15 +94,24 @@ public class Opdracht_316 {
         System.out.println("Aantal onbekend totaal: " + aantalOnbekendTotaal);
     }
 
-    private static String leesVeld(String persoon, int index) {
-        String[] split = persoon.split(";");
-        if (index >= 0 && index <= 2) {
-            return split[0].split("-")[index];
-        }
-        else if (index > 2 && index < split.length + 2) {
-            return split[index - 2];
-        }
-        return "";
+    private static String leesVeld(String[] persoonsgegevens, int index, int veld) {
+        String persoon = persoonsgegevens[index];
+
+        // split
+        String[] split1 = persoon.split(";");
+        String[] split2 = split1[0].split("-");
+
+        String[] array = new String[6];
+
+        array[0] = split2[0];
+        array[1] = split2[1];
+        array[2] = split2[2];
+
+        array[3] = split1[1];
+        array[4] = split1[2];
+        array[5] = split1[3];
+
+        return array[veld];
     }
 
 }
