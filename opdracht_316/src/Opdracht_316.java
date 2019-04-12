@@ -103,13 +103,8 @@ public class Opdracht_316 {
 
         String[] array = new String[6];
 
-        array[0] = split2[0];
-        array[1] = split2[1];
-        array[2] = split2[2];
-
-        array[3] = split1[1];
-        array[4] = split1[2];
-        array[5] = split1[3];
+        System.arraycopy(split2, 0, array, 0, split2.length);
+        System.arraycopy(split1, 1, array, 3, split1.length - 1);
 
         return array[veld];
     }
