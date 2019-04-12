@@ -1,0 +1,10 @@
+24-08-1954;V;Dijk;Van;Maria
+02-03-1958;M;Groot;De;Jacob
+17-06-1958;V;Winters;;Felicia
+12-01-1963;m;Swinkels;;Mark"
+31-07-1963;v;Deutekom;Van;Lilian
+05-11-1963;V;Jacht;van der;Jolanda
+19-08-1964;?;Puffelen;van;;
+22-05-1970;v;Dietvorst;;Wilma
+01-06-1970;v;Boogerts;Den;Ester
+19-09-1970;m;Konincks;;Sven
