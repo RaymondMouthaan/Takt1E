@@ -1,4 +1,4 @@
-public class Opdracht_316 {
+public class Opdracht316 {
     public static void main(String[] args) {
         // Vul tabel met persoonsgegevens
         // <geboortedag>-<geboortemaand>-<geboortejaar>;<geslacht>;<achternaam>;<voornaam>
