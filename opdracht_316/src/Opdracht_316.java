@@ -32,7 +32,7 @@ public class Opdracht_316 {
         // C1 = loopTeller < maximumAantal
         while (loopTeller < maximumAantal) {
 
-            // Split regel, bepaal jaar en geslacht
+            // Split regel, bepaal geboortejaar
             int geboorteJaar = leesVeldGeboorteJaar(persoon, loopTeller);
 
             // Schrijf geboortejaar

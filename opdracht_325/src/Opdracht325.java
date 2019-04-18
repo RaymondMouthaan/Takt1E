@@ -3,8 +3,8 @@ import java.io.*;
 public class Opdracht325 {
     public static void main(String[] args) throws IOException {
 
-        // Open invoerbestand (persoon.txt)
-        BufferedReader reader = new BufferedReader(new FileReader("opdracht_325/src/persoon.txt"));
+        // Open invoerbestand (personen.txt)
+        BufferedReader reader = new BufferedReader(new FileReader("opdracht_325/src/personen.txt"));
 
         // Open uitvoerbestand (output.txt)
         BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
@@ -14,16 +14,13 @@ public class Opdracht325 {
         int aantalVrouwenTotaal = 0;
         int aantalOnbekendTotaal = 0;
 
-        // Initialiseer loopteller
-        int loopTeller = 0;
-
         // Lees volgende regel
         String regel = reader.readLine();
 
         // Een hulp variable om het geboortejaar in op te slaan
         int hulpJaar;
 
-        // C1 = loopTeller < maximumAantal
+        // C1 =
         while (regel != null) {
 
             // Split regel, bepaal jaar en geslacht
@@ -48,15 +45,13 @@ public class Opdracht325 {
             while (regel != null && geboorteJaar == hulpJaar) {
 
                 // Geslacht man, vrouw of onbekend?
-                switch (geslacht) {
-                    case "M":
-                    case "m": {
+                switch (geslacht.toUpperCase()) {
+                    case "M": {
                         aantalMannen++; // Tel mannen dit jaar
                         aantalMannenTotaal++; // Tel mannen totaal
                         break;
                     }
-                    case "V":
-                    case "v": {
+                    case "V": {
                         aantalVrouwen++; // Tel vrouwen dit jaar
                         aantalVrouwenTotaal++; // Tel vrouwen totaal
                         break;
@@ -65,12 +60,11 @@ public class Opdracht325 {
                         aantalOnbekend++; // Tel onbekend/rest dit jaar
                         aantalOnbekendTotaal++; // Tel onbekend/rest totaal
                 }
-                // Verhoog teller
-                loopTeller++;
 
+                // Lees de volgende regel
                 regel = reader.readLine();
 
-                // C1 = loopTeller < maximumAantal
+                // C1
                 // deze if kan ook vervangen worden door de controle in de while op te nemen, geboorteJaar vervangen door de methode
                 if (regel != null) {
                     // Split regel, bepaal jaar en geslacht
@@ -112,9 +106,9 @@ public class Opdracht325 {
     }
 
     /**
-     * Methode om uit een array met persoonsgegevens het geboortejaar terug te geven
+     * Methode om uit een regel met persoonsgegevens het geboortejaar terug te geven
      *
-     * @param persoonsgegevens de array van persoonsgegevens
+     * @param persoonsgegevens de regel van persoonsgegevens
      * @return het geboortejaar als integer
      */
     private static int leesVeldGeboorteJaar(String persoonsgegevens) {
@@ -124,9 +118,9 @@ public class Opdracht325 {
     }
 
     /**
-     * Methode om uit een array met persoonsgegevens het geslacht terug te geven
+     * Methode om uit een regel met persoonsgegevens het geslacht terug te geven
      *
-     * @param persoonsgegevens de array van persoonsgegevens
+     * @param persoonsgegevens de regel van persoonsgegevens
      * @return het geslacht als String
      */
     private static String leesVeldGeslacht(String persoonsgegevens) {
