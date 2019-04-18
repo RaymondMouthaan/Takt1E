@@ -20,7 +20,7 @@ public class Opdracht325 {
         // Een hulp variable om het geboortejaar in op te slaan
         int hulpJaar;
 
-        // C1 =
+        // C1 = check of de regel niet null is (einde bestand als deze wel null is)
         while (regel != null) {
 
             // Split regel, bepaal jaar en geslacht
@@ -64,7 +64,7 @@ public class Opdracht325 {
                 // Lees de volgende regel
                 regel = reader.readLine();
 
-                // C1
+                // C1 = check of de regel niet null is (einde bestand als deze wel null is)
                 // deze if kan ook vervangen worden door de controle in de while op te nemen, geboorteJaar vervangen door de methode
                 if (regel != null) {
                     // Split regel, bepaal jaar en geslacht
